@@ -1,0 +1,172 @@
+/* style.css */
+/* You can add your CSS styles here */
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Black'), local('Inter-Bold'), url('fonts/Inter/Inter-Bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Stem';
+    src: local('Stem'), url('fonts/Stem/500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    background-color: #161414;
+    color: #ffffff; /* Text color */
+    font-family: 'Stem', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between child elements */
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for the menu */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif; /* Use Inter font for the menu */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu a:hover {
+    color: #ffffff; /* Set text color to white on hover */
+}
+
+/* Style for the rounded button */
+.icon-button {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px; /* Adjust the border-radius for roundness */
+    font-family: 'Inter', sans-serif; /* Use Inter font for the button */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+    width: var(--button-width, auto); /* Customizable width, defaults to auto */
+    height: var(--button-height, auto); /* Customizable height, defaults to auto */
+}
+
+/* Hover effect: Fill with color on hover */
+.icon-button:hover {
+    background-color: #ffffff;
+    color: #000000; /* Set text color to black on hover */
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none; /* Initially hide the toggle button on larger screens */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Responsive Media Query */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Hide the menu on larger screens */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust the top position to prevent overlap with header */
+        left: 0;
+        background-color: #2d2d2d;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex; /* Show the menu when the mobile menu is active */
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu a:hover {
+        color: #000000; /* Set text color to black on hover */
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Show the toggle button on smaller screens */
+    }
+}
+
+/* Style for the new container */
+.new-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    background-color: #161414;
+    text-align: center; /* Center the content horizontally */
+}
+
+.text-content {
+    flex: 1; /* Take up all available space in the row */
+    padding: 10px;
+    font-size: 70px;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.image-content {
+    flex: 1; /* Take up all available space in the row */
+    padding: 10px;
+    text-align: center;
+}
+
+.image-content img {
+    max-width: 100%; /* Make sure the image doesn't exceed its container width */
+    height: auto;
+    display: block; /* Center the image horizontally */
+    margin: 0 auto;
+}
